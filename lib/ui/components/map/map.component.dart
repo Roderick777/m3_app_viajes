@@ -28,7 +28,7 @@ class _CustomMapState extends State<CustomMap> {
             child: FlutterMap(
               options: MapOptions(
                 center: widget.center,
-                zoom: 2,
+                zoom: 4,
               ),
               nonRotatedChildren: [
                 // AttributionWidget.defaultWidget(

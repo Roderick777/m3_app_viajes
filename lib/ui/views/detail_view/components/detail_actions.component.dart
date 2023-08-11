@@ -30,16 +30,18 @@ class _DetailActionsState extends State<DetailActions> {
       context: context,
       builder: (BuildContext context) {
         return Dialog(
+          backgroundColor: Colors.white,
+          surfaceTintColor: Colors.white,
           child: SizedBox(
             width: double.infinity,
             height: 400.0,
             child: ListView(
               children: [
-                const Padding(
-                  padding: EdgeInsets.only(left: 16, right: 16, top: 16),
+                Padding(
+                  padding: const EdgeInsets.only(left: 16, right: 16, top: 16),
                   child: CustomText(
-                    'Título del diálogo',
-                    style: TextStyle(fontSize: 20),
+                    widget.place.title,
+                    style: const TextStyle(fontSize: 20),
                   ),
                 ),
                 SizedBox(
@@ -50,12 +52,16 @@ class _DetailActionsState extends State<DetailActions> {
                 Padding(
                   padding: const EdgeInsets.only(left: 16, right: 16),
                   child: Row(
+                    mainAxisAlignment: MainAxisAlignment.end,
                     children: [
                       TextButton(
                         onPressed: () {
                           Navigator.pop(context);
                         },
-                        child: const Text('Cerrar'),
+                        child: const CustomText(
+                          'Cerrar',
+                          style: TextStyle(fontSize: 20),
+                        ),
                       ),
                     ],
                   ),

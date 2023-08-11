@@ -38,8 +38,8 @@ class _HomeViewState extends State<HomeView> {
         child: Stack(
           children: [
             SizedBox(
-              height: double.infinity,
-              width: double.infinity,
+              height: size.height,
+              width: size.width,
               child: CustomPaint(
                 painter: HeaderPaintWaves(),
               ),

@@ -24,18 +24,17 @@ class _DetailViewState extends State<DetailView> {
           Hero(
             tag: 'profile-image${widget.place.id}',
             child: Container(
-              width: double.infinity,
               height: 400.0,
-              alignment: Alignment.topCenter,
+              padding: const EdgeInsets.all(16),
+              alignment: Alignment.topLeft,
               decoration: BoxDecoration(
                 image: DecorationImage(
                   image: NetworkImage(widget.place.image),
                   fit: BoxFit.cover,
                 ),
               ),
-              child: Padding(
-                padding: const EdgeInsets.all(10),
-                child: Row(children: [
+              child: Wrap(
+                children: [
                   CircleButton(
                     size: 60,
                     color: Colors.black.withAlpha(50),
@@ -47,8 +46,8 @@ class _DetailViewState extends State<DetailView> {
                       color: Colors.white,
                       size: 28,
                     ),
-                  )
-                ]),
+                  ),
+                ],
               ),
             ),
           ),
