@@ -6,9 +6,11 @@ class CustomImage extends StatefulWidget {
     super.key,
     required this.url,
     this.placeholder = const CircularProgressIndicator(),
+    this.height = double.infinity,
   });
   final Widget placeholder;
   final String url;
+  final double height;
 
   @override
   State<CustomImage> createState() => _CustomImageState();
@@ -19,6 +21,7 @@ class _CustomImageState extends State<CustomImage> {
   Widget build(BuildContext context) {
     return CachedNetworkImage(
       imageUrl: widget.url,
+      height: widget.height,
       placeholder: (context, url) => widget.placeholder,
       errorWidget: (context, url, error) => const Icon(Icons.error),
     );

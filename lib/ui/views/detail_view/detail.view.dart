@@ -4,6 +4,7 @@ import 'package:m3_app_viajes/ui/components/buttons/circle_button.widget.dart';
 import 'package:m3_app_viajes/ui/components/layouts/custom_scaffold.widget.dart';
 import 'package:m3_app_viajes/ui/components/texts/custom_text.component.dart';
 import 'package:m3_app_viajes/ui/views/detail_view/components/detail_actions.component.dart';
+import 'package:m3_app_viajes/utils/platform.util.dart';
 
 class DetailView extends StatefulWidget {
   const DetailView({super.key, required this.place});
@@ -35,18 +36,20 @@ class _DetailViewState extends State<DetailView> {
               ),
               child: Wrap(
                 children: [
-                  CircleButton(
-                    size: 60,
-                    color: Colors.black.withAlpha(50),
-                    action: () {
-                      Navigator.pop(context);
-                    },
-                    child: const Icon(
-                      Icons.chevron_left,
-                      color: Colors.white,
-                      size: 28,
-                    ),
-                  ),
+                  isMainPlatform()
+                      ? const Text('')
+                      : CircleButton(
+                          size: 60,
+                          color: Colors.black.withAlpha(50),
+                          action: () {
+                            Navigator.pop(context);
+                          },
+                          child: const Icon(
+                            Icons.chevron_left,
+                            color: Colors.white,
+                            size: 28,
+                          ),
+                        ),
                 ],
               ),
             ),

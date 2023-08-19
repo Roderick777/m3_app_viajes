@@ -6,6 +6,7 @@ import 'package:m3_app_viajes/ui/components/layouts/custom_scaffold.widget.dart'
 import 'package:m3_app_viajes/ui/views/detail_view/detail.view.dart';
 import 'package:m3_app_viajes/ui/views/home_view/components/header_painter_waves.component.dart';
 import 'package:m3_app_viajes/ui/views/home_view/components/place_card.component.dart';
+import 'package:m3_app_viajes/utils/platform.util.dart';
 
 class HomeView extends StatefulWidget {
   const HomeView({super.key});
@@ -34,15 +35,13 @@ class _HomeViewState extends State<HomeView> {
     Size size = MediaQuery.of(context).size;
     return CustomScaffold(
         mainAction: () {},
-        title: const Text('Titulo app'),
+        title: const Text('Travel App'),
         child: Stack(
           children: [
             SizedBox(
               height: size.height,
               width: size.width,
-              child: CustomPaint(
-                painter: HeaderPaintWaves(),
-              ),
+              child: isMainPlatform() ? const Text('') : CustomPaint(painter: HeaderPaintWaves()),
             ),
             SizedBox(
               width: size.width,
@@ -51,12 +50,12 @@ class _HomeViewState extends State<HomeView> {
                 itemCount: _places.length,
                 itemBuilder: (BuildContext c, int i) {
                   PlaceModel element = _places[i];
-                  if (element.id == 0) {
+
+                  if (element.title == '' && element.description == '') {
                     return SizedBox(
                       height: 130,
                       child: Padding(
-                        padding:
-                            const EdgeInsets.only(left: 10, right: 10, top: 30),
+                        padding: const EdgeInsets.only(left: 10, right: 10, top: 30),
                         child: Wrap(
                           spacing: 3,
                           children: [
@@ -64,7 +63,7 @@ class _HomeViewState extends State<HomeView> {
                               'Travel App',
                               style: GoogleFonts.dancingScript(
                                 fontSize: 40,
-                                color: Colors.white,
+                                color: isMainPlatform() ? Colors.blue : Colors.white,
                               ),
                             ),
                             const Icon(Icons.sunny, color: Colors.amber),

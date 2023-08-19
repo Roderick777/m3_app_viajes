@@ -32,9 +32,7 @@ class _PlaceCardComponentState extends State<PlaceCardComponent> {
             decoration: BoxDecoration(
               borderRadius: BorderRadius.circular(8.0),
               color: Colors.white,
-              boxShadow: const [
-                BoxShadow(blurRadius: 7, color: Colors.grey, spreadRadius: -4)
-              ],
+              boxShadow: const [BoxShadow(blurRadius: 7, color: Colors.grey, spreadRadius: -4)],
             ),
             child: Padding(
               padding: const EdgeInsets.all(10),

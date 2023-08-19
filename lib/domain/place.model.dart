@@ -1,13 +1,13 @@
 class PlaceModel {
-  const PlaceModel({
-    this.title = '',
-    this.description = '',
-    this.id = 0,
-    this.lat = 0,
-    this.lng = 0,
-    this.zoom = 1,
-    this.image = '',
-  });
+  const PlaceModel(
+      {this.title = '',
+      this.description = '',
+      this.id = 0,
+      this.lat = 0,
+      this.lng = 0,
+      this.zoom = 1,
+      this.image = '',
+      this.country = ''});
 
   final String title;
   final String description;
@@ -16,6 +16,7 @@ class PlaceModel {
   final double lng;
   final double zoom;
   final String image;
+  final String country;
 
   factory PlaceModel.fromJson(dynamic json) {
     return PlaceModel(
@@ -26,6 +27,19 @@ class PlaceModel {
       lng: (json['lng'] as num).toDouble(),
       zoom: (json['zoom'] as num).toDouble(),
       image: json['image'],
+      country: json['country'],
     );
+  }
+
+  Map<String, dynamic> toJsonWithoutId() {
+    return {
+      'title': title,
+      'description': description,
+      'lat': lat,
+      'lng': lng,
+      'zoom': zoom,
+      'image': image,
+      'country': country,
+    };
   }
 }

@@ -1,4 +1,6 @@
+import 'package:flutter/cupertino.dart';
 import 'package:flutter/material.dart';
+import 'package:m3_app_viajes/utils/platform.util.dart';
 import 'package:provider/provider.dart';
 import 'package:m3_app_viajes/data/provider/main.provider.dart';
 import 'package:m3_app_viajes/ui/views/home_view/home.view.dart';
@@ -18,14 +20,21 @@ class MyApp extends StatelessWidget {
   // This widget is the root of your application.
   @override
   Widget build(BuildContext context) {
-    return MaterialApp(
-      title: 'Flutter Demo',
-      debugShowCheckedModeBanner: false,
-      theme: ThemeData(
-        colorScheme: ColorScheme.fromSeed(seedColor: Colors.blue),
-        useMaterial3: true,
-      ),
-      home: const HomeView(),
-    );
+    if (isMainPlatform()) {
+      return const CupertinoApp(
+        debugShowCheckedModeBanner: false,
+        home: HomeView(),
+      );
+    } else {
+      return MaterialApp(
+        title: 'Flutter Demo',
+        debugShowCheckedModeBanner: false,
+        theme: ThemeData(
+          colorScheme: ColorScheme.fromSeed(seedColor: Colors.blue),
+          useMaterial3: true,
+        ),
+        home: const HomeView(),
+      );
+    }
   }
 }

@@ -1,5 +1,6 @@
 import 'package:flutter/cupertino.dart';
 import 'package:flutter/material.dart';
+import 'package:m3_app_viajes/application/contants.dart';
 import 'package:m3_app_viajes/utils/platform.util.dart';
 
 class CustomScaffold extends StatefulWidget {
@@ -22,16 +23,16 @@ class _CustomScaffoldState extends State<CustomScaffold> {
   Widget build(BuildContext context) {
     if (isMainPlatform()) {
       return CupertinoPageScaffold(
-        // navigationBar: CupertinoNavigationBar(
-        //   middle: widget.title,
-        //   trailing: CupertinoButton(
-        //     padding: EdgeInsets.zero,
-        //     onPressed: () {
-        //       widget.mainAction();
-        //     },
-        //     child: const Icon(CupertinoIcons.add),
-        //   ),
-        // ),
+        navigationBar: CupertinoNavigationBar(
+          middle: widget.title,
+          trailing: CupertinoButton(
+            padding: EdgeInsets.zero,
+            onPressed: () {
+              widget.mainAction();
+            },
+            child: const Icon(CupertinoIcons.add),
+          ),
+        ),
         child: widget.child,
       );
     } else {
@@ -41,10 +42,11 @@ class _CustomScaffoldState extends State<CustomScaffold> {
         // ),
         body: widget.child,
         floatingActionButton: FloatingActionButton(
+          backgroundColor: kPrimaryColor,
           onPressed: () {
             widget.mainAction();
           },
-          child: const Icon(Icons.add),
+          child: const Icon(Icons.add, color: Colors.white),
         ),
       );
     }
