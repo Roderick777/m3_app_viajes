@@ -41,14 +41,8 @@ class _DetailViewState extends State<DetailView> {
                       : CircleButton(
                           size: 60,
                           color: Colors.black.withAlpha(50),
-                          action: () {
-                            Navigator.pop(context);
-                          },
-                          child: const Icon(
-                            Icons.chevron_left,
-                            color: Colors.white,
-                            size: 28,
-                          ),
+                          action: () => Navigator.pop(context),
+                          child: const Icon(Icons.chevron_left, color: Colors.white, size: 28),
                         ),
                 ],
               ),

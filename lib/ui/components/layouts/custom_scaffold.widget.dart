@@ -37,9 +37,6 @@ class _CustomScaffoldState extends State<CustomScaffold> {
       );
     } else {
       return Scaffold(
-        // appBar: AppBar(
-        //   title: widget.title,
-        // ),
         body: widget.child,
         floatingActionButton: FloatingActionButton(
           backgroundColor: kPrimaryColor,
