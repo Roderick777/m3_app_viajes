@@ -18,7 +18,7 @@ class _DetailViewState extends State<DetailView> {
   @override
   Widget build(BuildContext context) {
     return CustomScaffold(
-      title: const Text('Detalle'),
+      title: Text(widget.place.title),
       mainAction: () {},
       child: ListView(
         children: [
