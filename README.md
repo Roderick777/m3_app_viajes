@@ -1,16 +1,7 @@
 # m3_app_viajes
 
-A new Flutter project.
+Aplicación de viajes en el módulo 3
 
-## Getting Started
+## Video explicativo
 
-This project is a starting point for a Flutter application.
-
-A few resources to get you started if this is your first Flutter project:
-
-- [Lab: Write your first Flutter app](https://docs.flutter.dev/get-started/codelab)
-- [Cookbook: Useful Flutter samples](https://docs.flutter.dev/cookbook)
-
-For help getting started with Flutter development, view the
-[online documentation](https://docs.flutter.dev/), which offers tutorials,
-samples, guidance on mobile development, and a full API reference.
+https://www.loom.com/share/d6f939247a564618a48953f8f85fae2f?sid=ae9955bf-d92e-4247-9ef5-8cf31c869986
