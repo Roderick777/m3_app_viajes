@@ -30,12 +30,7 @@ class _CustomMapState extends State<CustomMap> {
                 center: widget.center,
                 zoom: 4,
               ),
-              nonRotatedChildren: [
-                // AttributionWidget.defaultWidget(
-                //   source: '',
-                //   onSourceTapped: null,
-                // ),
-              ],
+              nonRotatedChildren: const [],
               children: [
                 TileLayer(
                   urlTemplate: 'https://tile.openstreetmap.org/{z}/{x}/{y}.png',
