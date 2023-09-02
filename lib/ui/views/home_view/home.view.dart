@@ -32,17 +32,28 @@ class _HomeViewState extends State<HomeView> {
     });
   }
 
+  _mainAction() {
+    showMessage(
+      title: 'Crear',
+      message: 'Aqui próximamente podremos crear más lugares turísticos',
+      context: context,
+    );
+  }
+
+  _onPlaceTap(BuildContext context, PlaceModel element) {
+    Navigator.push(
+      context,
+      MaterialPageRoute(
+        builder: (context) => DetailView(place: element),
+      ),
+    );
+  }
+
   @override
   Widget build(BuildContext context) {
     Size size = MediaQuery.of(context).size;
     return CustomScaffold(
-      mainAction: () {
-        showMessage(
-          title: 'Crear',
-          message: 'Aqui próximamente podremos crear más lugares turísticos',
-          context: context,
-        );
-      },
+      mainAction: _mainAction(),
       title: const Text('Travel App'),
       child: FadeInLeft(
         duration: const Duration(milliseconds: 1000),
@@ -84,14 +95,7 @@ class _HomeViewState extends State<HomeView> {
                   } else {
                     return PlaceCardComponent(
                       place: element,
-                      onTap: () {
-                        Navigator.push(
-                          context,
-                          MaterialPageRoute(
-                            builder: (context) => DetailView(place: element),
-                          ),
-                        );
-                      },
+                      onTap: _onPlaceTap(context, element),
                     );
                   }
                 },

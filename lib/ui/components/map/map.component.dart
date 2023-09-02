@@ -19,27 +19,28 @@ class _CustomMapState extends State<CustomMap> {
   @override
   Widget build(BuildContext context) {
     return Padding(
-        padding: const EdgeInsets.all(16.0),
-        child: ClipRRect(
-          borderRadius: BorderRadius.circular(10.0),
-          child: SizedBox(
-            height: 300,
-            width: double.infinity,
-            child: FlutterMap(
-              options: MapOptions(
-                center: widget.center,
-                zoom: 4,
-              ),
-              nonRotatedChildren: const [],
-              children: [
-                TileLayer(
-                  urlTemplate: 'https://tile.openstreetmap.org/{z}/{x}/{y}.png',
-                  userAgentPackageName: 'com.example.app',
-                ),
-                MarkerLayer(markers: widget.markers),
-              ],
+      padding: const EdgeInsets.all(16.0),
+      child: ClipRRect(
+        borderRadius: BorderRadius.circular(10.0),
+        child: SizedBox(
+          height: 300,
+          width: double.infinity,
+          child: FlutterMap(
+            options: MapOptions(
+              center: widget.center,
+              zoom: 4,
             ),
+            nonRotatedChildren: const [],
+            children: [
+              TileLayer(
+                urlTemplate: 'https://tile.openstreetmap.org/{z}/{x}/{y}.png',
+                userAgentPackageName: 'com.example.app',
+              ),
+              MarkerLayer(markers: widget.markers),
+            ],
           ),
-        ));
+        ),
+      ),
+    );
   }
 }

@@ -25,9 +25,7 @@ class _PlaceCardComponentState extends State<PlaceCardComponent> {
       child: Padding(
         padding: const EdgeInsets.all(10),
         child: GestureDetector(
-          onTap: () {
-            widget.onTap();
-          },
+          onTap: () => widget.onTap(),
           child: Container(
             decoration: BoxDecoration(
               borderRadius: BorderRadius.circular(8.0),
@@ -49,9 +47,7 @@ class _PlaceCardComponentState extends State<PlaceCardComponent> {
                           child: SizedBox(
                             height: 60,
                             width: 60,
-                            child: CircleAvatar(
-                              backgroundImage: NetworkImage(widget.place.image),
-                            ),
+                            child: CircleAvatar(backgroundImage: NetworkImage(widget.place.image)),
                           ),
                         ),
                         CustomText(
